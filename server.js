@@ -12,7 +12,7 @@ socket.on('connection', function(client){
 
 	// Success!  Now listen to messages to be received
 	client.on('click',function(event){
-		scoreTotal = scoreTotal + baseClickIncrease;
+		scoreTotal += baseClickIncrease;
 	});
 	client.on('disconnect',function(){
 		console.log('Server has disconnected');
