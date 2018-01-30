@@ -1,5 +1,8 @@
 {
   "name": "just-a-button",
   "version": "0.0.1",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "winston": "2.x.x"
+  }
 }
