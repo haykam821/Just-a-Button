@@ -4,7 +4,7 @@ var server = http.createServer();
 server.listen(8080);
 
 const baseClickIncrease = 1;
-scoreTotal = 0;
+let scoreTotal = 0;
 
 var socket = io.listen(server);
 
