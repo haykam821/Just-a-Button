@@ -14,13 +14,14 @@ let scoreTotal = 0;
 
 const socket = io.listen(server);
 
-socket.on("connection", (client) => {
-    log("A client has connected to the server.");
+socket.on("connection", client => {
+	log("A client has connected to the server.");
 
-    client.on("click", (message) => {
-        scoreTotal += baseClickIncrease;
-    });
-    client.on("disconnect", (message) => {
-        log("A client has disconnected from the server.");
-    });
+	client.on("click", () => {
+		scoreTotal += baseClickIncrease;
+		socket.emit("updateScore", scoreTotal);
+	});
+	client.on("disconnect", () => {
+		log("A client has disconnected from the server.");
+	});
 });
